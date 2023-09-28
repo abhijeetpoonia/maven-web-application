@@ -29,11 +29,65 @@
     </properties>
 
     <dependencies>
-        <!-- Your dependencies here -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160212</version>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Java Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring Framework Dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- ... other dependencies ... -->
     </dependencies>
 
     <distributionManagement>
-        <!-- Your distribution management settings here -->
+        <repository>
+            <id>nexus</id>
+            <name>Mithun Technologies Releases Nexus Repository</name>
+            <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Mithun Technologies Snapshot Nexus Repository </name>
+            <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <build>
@@ -73,14 +127,6 @@
                     <wtpContextName>maven-web-application</wtpContextName>
                 </configuration>
             </plugin>
-
-            <!-- Update the Maven War Plugin version -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
-            </plugin>
         </plugins>
     </build>
 </project>
-
